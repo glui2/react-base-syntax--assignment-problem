@@ -4,13 +4,26 @@ import UserInput from "./components/UserInput";
 import UserOutput from "./components/UserOutput";
 
 class App extends Component {
+  state = {
+    username: "Gavin State"
+  };
+
+  usernameChangeHandler = event => {
+    this.setState({
+      username: event.target.value
+    });
+  };
+
   render() {
     return (
       <div className="App">
-        <UserOutput username="Gavin"></UserOutput>
+        <UserOutput username={this.state.username}></UserOutput>
         <UserOutput username="Steve"></UserOutput>
         <UserOutput username="Dave"></UserOutput>
-        <UserInput></UserInput>
+        <UserInput
+          changed={this.usernameChangeHandler}
+          username={this.state.username}
+        ></UserInput>
 
         <ol>
           {/* <li>Create TWO new components: UserInput and UserOutput</li> */}
@@ -19,15 +32,15 @@ class App extends Component {
             Output multiple UserOutput components in the App component (any
             paragraph texts of your choice)
           </li> */}
-          <li>
+          {/* <li>
             Pass a username (of your choice) to UserOutput via props and display
             it there
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             Add state to the App component (=> the username) and pass the
             username to the UserOutput component
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             Add a method to manipulate the state (=> an event-handler method)
           </li>
           <li>
@@ -37,11 +50,11 @@ class App extends Component {
           <li>
             Ensure that the new input entered by the user overwrites the old
             username passed to UserOutput
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             Add two-way-binding to your input (in UserInput) to also display the
             starting username
-          </li>
+          </li> */}
           <li>
             Add styling of your choice to your components/ elements in the
             components - both with inline styles and stylesheets
